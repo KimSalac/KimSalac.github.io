@@ -21,6 +21,12 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY
         <div id="info">
             UNFOLD
         </div>
+
+        <iframe src="music/silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
+        <audio id="player" autoplay loop>
+            <source src="music/moonrise.mp3" type="audio/mp3">
+        </audio>
+
 		<script type="module">
 
 			import * as THREE from '../build/three.module.js';
@@ -202,9 +208,13 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY
 
 				}
 
-			}
-
-
+            }
+            
+            var audio = document.getElementById("player");
+            document.body.addEventListener('mousemove', () => {
+                audio.play();
+            });
+            
 		</script>
 	</body>
 </html>
